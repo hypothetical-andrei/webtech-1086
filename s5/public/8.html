@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .done {
+        text-decoration: line-through;
+      }
+    </style>
+    <script>
+      window.onload = () => {
+        const cells = document.querySelectorAll('table td:last-child')
+        cells.forEach((e) => {
+          e.onclick = (evt) => {
+            evt.target.classList.toggle('done')
+            evt.target.innerHTML = evt.target.innerHTML === 'done' ? 'not done' : 'done'
+          }
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>item 1</td><td>jim</td><td>not done</td>
+      </tr>
+      <tr>
+        <td>item 2</td><td>tim</td><td>not done</td>
+      </tr>
+      <tr>
+        <td>item 3</td><td>jane</td><td>not done</td>
+      </tr>
+      <tr>
+        <td>item 4</td><td>phil</td><td>not done</td>
+      </tr>
+    </table>
+  </body>
+</html>

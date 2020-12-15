@@ -1,0 +1,27 @@
+body{
+  margin: 0px;
+}
+
+.menu-bar{
+  position: fixed;
+  background-color: tomato;
+  top:0px;
+  width: 100vw;
+  height: 50px;
+  text-align: center;
+  z-index: 1;
+}
+
+.menu-item{
+  display: inline-block;
+  height: 50px;
+  width: 100px;
+  line-height: 50px;
+  border: 3px dashed orange;
+  box-sizing: border-box;
+}
+
+.content {
+  position: relative;
+  top: 50px;
+}

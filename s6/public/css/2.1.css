@@ -1,0 +1,56 @@
+body{
+  margin: 0px;
+}
+
+.main {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 30% auto;
+  grid-template-rows: 33% auto 33%;
+  grid-template-areas: 
+    "item1 view"
+    "item2 view"
+    "item3 view"
+  ;
+}
+
+.sidebar{
+  background-color: gold;
+  width: 30vw;
+  height: 100vh;
+}
+
+.view{
+  background-color: lightblue;
+  width: 70vw;
+  height: 100vh;
+  grid-area: view;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-item {
+  height: 33vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-item:first-child{
+  grid-area: item1;
+}
+
+.sidebar-item:nth-child(2){
+  grid-area: item2;
+}
+
+.sidebar-item:last-child{
+  grid-area: item3;
+}
+
+.sidebar-item:hover{
+  border: 3px dashed tomato;
+  box-sizing: border-box;
+}

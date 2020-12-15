@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      window.onload = () => {
+        const employees = [{
+          employee_name: 'john',
+          employee_salary: 4000,
+          employee_age: 33
+        },{
+          employee_name: 'jane',
+          employee_salary: 5000,
+          employee_age: 36
+        }]
+
+        let t0 = document.getElementById('employees')
+        let b0 = document.getElementById('b0')
+        b0.onclick = () => {
+          let content = employees.map((e) => `
+            <tr>
+              <td>${e.employee_name}</td>
+              <td>${e.employee_salary}</td>
+              <td>${e.employee_age}</td> 
+            </tr>
+          `).join('')
+          t0.innerHTML = content
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <input type="button" value="get emps" id="b0" />
+    <table id=employees></table>
+  </body>
+</html>

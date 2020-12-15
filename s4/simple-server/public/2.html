@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .done {
+        text-decoration: line-through;
+      }
+    </style>
+    <script>
+      window.onload = () => {
+        let b0 = document.getElementById('b0')
+        let t0 = document.getElementById('t0')
+        let d0 = document.getElementById('content')
+        b0.onclick = (evt) => {
+          let value = t0.value
+          // d0.innerHTML += `
+          //   <li>${value}</li>
+          // `
+          let node = document.createElement('li')
+          let text = document.createTextNode(value)
+          node.onclick = () => {
+            node.classList.toggle('done')
+          }
+          node.appendChild(text)
+          d0.appendChild(node)
+        } 
+      }
+    </script>
+  </head>
+  <body>
+    <!-- <div class="done">some text</div> -->
+    <input type="text" id="t0" />
+    <input type="button" value="add me!" id="b0">
+    <ol id="content"></ol>
+  </body>
+</html>

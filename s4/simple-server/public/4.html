@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      window.onload = () => {
+        let t0 = document.getElementById('employees')
+        let b0 = document.getElementById('b0')
+        
+        b0.onclick = async () => {
+          try {
+            let response = await fetch('http://dummy.restapiexample.com/api/v1/employees')
+            let responseContent = await response.json()
+            let data = responseContent.data
+            let content = data.map((e) => `
+              <tr>
+                <td>${e.employee_name}</td>
+                <td>${e.employee_salary}</td>
+                <td>${e.employee_age}</td> 
+              </tr>
+            `).join('')
+            t0.innerHTML = content
+          } catch (err) {
+            console.warn(err)
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <input type="button" value="get emps" id="b0" />
+    <table id=employees></table>
+  </body>
+</html>
